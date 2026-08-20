@@ -10,152 +10,80 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <style>
 :root{
-  --void:#08080a;
-  --c900:#101015;
-  --c800:#17171e;
-  --c700:#20202a;
-  --line:#33333f;
-  --line-dim:#26262f;
-  --ash:#a1a3ad;        /* brighter labels */
-  --ash-2:#c2c4cd;      /* hint / secondary text */
-  --ash-dim:#787a85;
-  --bleach:#f3f3f6;
-  --blue:#5d89ff;
-  --violet:#a97dff;
-  --safe:#ff4453;
-  --amber:#ff9a52;
+  --void:#08080a; --c900:#101015; --c800:#17171e; --c700:#20202a;
+  --line:#33333f; --line-dim:#26262f;
+  --ash:#a1a3ad; --ash-2:#c2c4cd; --ash-dim:#787a85;
+  --bleach:#f3f3f6; --blue:#5d89ff; --violet:#a97dff; --safe:#ff4453; --amber:#ff9a52;
   --font-d:"Pretendard Variable",Pretendard,system-ui,sans-serif;
   --font-b:"Pretendard Variable",Pretendard,system-ui,sans-serif;
   --font-m:"Space Mono",ui-monospace,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{
-  background:var(--void);
-  color:var(--bleach);
-  font-family:var(--font-b);
-  font-size:17px;
-  line-height:1.72;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-  position:relative;
-}
-body::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;
-  background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px);
-  mix-blend-mode:overlay;opacity:.5;
-}
-body::after{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.07;
-  background:radial-gradient(120% 70% at 50% -10%,var(--blue),transparent 55%),
-             radial-gradient(90% 60% at 100% 108%,var(--violet),transparent 55%);
-}
+body{background:var(--void);color:var(--bleach);font-family:var(--font-b);font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;opacity:.5}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.07;background:radial-gradient(120% 70% at 50% -10%,var(--blue),transparent 55%),radial-gradient(90% 60% at 100% 108%,var(--violet),transparent 55%)}
 .wrap{max-width:560px;margin:0 auto;padding:32px 20px 96px}
 
-/* ---- eyebrow ---- */
-.eyebrow{
-  font-family:var(--font-m);font-size:12px;letter-spacing:.24em;
-  color:var(--ash);text-transform:uppercase;display:flex;align-items:center;gap:11px;
-  margin-bottom:26px;
-}
+.eyebrow{font-family:var(--font-m);font-size:12px;letter-spacing:.24em;color:var(--ash);text-transform:uppercase;display:flex;align-items:center;gap:11px;margin-bottom:26px}
 .eyebrow::before{content:"";width:22px;height:2px;background:var(--blue);box-shadow:0 0 9px var(--blue);flex:none}
 .eyebrow b{color:var(--bleach);font-weight:700}
 
-/* ---- profile card ---- */
-.card{
-  position:relative;background:linear-gradient(158deg,var(--c800),var(--c900));
-  border:1px solid var(--line);
-  padding:24px;
-}
-.card::before{
-  content:"";position:absolute;top:-1px;left:24px;width:70px;height:2px;
-  background:var(--blue);box-shadow:0 0 11px var(--blue);
-}
-.portrait{
-  width:100%;max-width:230px;aspect-ratio:3/4;margin:0 auto 22px;
-  border:1px solid var(--line);
-  background:linear-gradient(135deg,rgba(93,137,255,.06),rgba(169,125,255,.06)),var(--void);
-  position:relative;display:flex;align-items:center;justify-content:center;
-}
-.portrait .ph{text-align:center;padding:14px}
-.portrait .cross{width:34px;height:34px;margin:0 auto 14px;position:relative;opacity:.55}
-.portrait .cross::before,.portrait .cross::after{content:"";position:absolute;background:var(--ash)}
-.portrait .cross::before{left:50%;top:0;width:1px;height:100%;transform:translateX(-.5px)}
-.portrait .cross::after{top:50%;left:0;height:1px;width:100%;transform:translateY(-.5px)}
-.portrait .plabel{font-family:var(--font-m);font-size:11px;letter-spacing:.12em;color:var(--ash);text-transform:uppercase;line-height:1.7}
-.portrait .corner{position:absolute;width:11px;height:11px;border-color:var(--ash-dim);border-style:solid}
-.portrait .c1{top:8px;left:8px;border-width:1.5px 0 0 1.5px}
-.portrait .c2{top:8px;right:8px;border-width:1.5px 1.5px 0 0}
-.portrait .c3{bottom:8px;left:8px;border-width:0 0 1.5px 1.5px}
-.portrait .c4{bottom:8px;right:8px;border-width:0 1.5px 1.5px 0}
+.card{position:relative;background:linear-gradient(158deg,var(--c800),var(--c900));border:1px solid var(--line);padding:24px}
+.card::before{content:"";position:absolute;top:-1px;left:24px;width:70px;height:2px;background:var(--blue);box-shadow:0 0 11px var(--blue)}
+
+.portrait{position:relative;width:100%;aspect-ratio:1080/840;margin:0 auto 22px;border:1px solid var(--line);overflow:hidden;background:var(--void)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.portrait .frameline{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 40px rgba(0,0,0,.35)}
+.portrait .corner{position:absolute;width:13px;height:13px;border-color:rgba(243,243,246,.8);border-style:solid;filter:drop-shadow(0 0 3px rgba(0,0,0,.6))}
+.portrait .c1{top:9px;left:9px;border-width:1.5px 0 0 1.5px}
+.portrait .c2{top:9px;right:9px;border-width:1.5px 1.5px 0 0}
+.portrait .c3{bottom:9px;left:9px;border-width:0 0 1.5px 1.5px}
+.portrait .c4{bottom:9px;right:9px;border-width:0 1.5px 1.5px 0}
+.portrait .tag{position:absolute;left:10px;bottom:10px;font-family:var(--font-m);font-size:10px;letter-spacing:.14em;color:rgba(243,243,246,.85);background:rgba(0,0,0,.55);padding:3px 7px;text-transform:uppercase}
 
 .who .kr{font-family:var(--font-d);font-weight:800;font-size:52px;letter-spacing:-.02em;line-height:1;text-align:center}
 .who .en{font-family:var(--font-m);font-size:13px;letter-spacing:.36em;color:var(--ash);margin-top:10px;text-transform:uppercase;text-align:center}
 .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 22px}
-.chip{font-family:var(--font-m);font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--bleach);
-  border:1px solid var(--line);padding:6px 13px;background:var(--c700)}
+.chip{font-family:var(--font-m);font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--bleach);border:1px solid var(--line);padding:6px 13px;background:var(--c700)}
 .chip.a{color:var(--blue);border-color:rgba(93,137,255,.5)}
-
 .specs{border-top:1px solid var(--line-dim);padding-top:20px;display:grid;gap:16px}
 .spec{display:grid;grid-template-columns:70px 1fr;gap:14px;align-items:baseline}
 .spec dt{font-family:var(--font-m);font-size:12px;letter-spacing:.1em;color:var(--ash);text-transform:uppercase;padding-top:1px}
 .spec dd{font-size:16px;line-height:1.6;color:#e8e8ec}
 .spec dd em{font-style:normal;color:var(--violet);font-weight:600}
 
-/* ---- section divider ---- */
 .sec{display:flex;align-items:center;gap:13px;margin:56px 0 28px}
 .sec .num{font-family:var(--font-m);font-size:12px;color:var(--ash-dim);letter-spacing:.16em;flex:none}
 .sec h2{font-family:var(--font-d);font-weight:800;font-size:27px;letter-spacing:-.01em;white-space:nowrap;flex:none}
 .sec .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
 
-/* ---- film reel ---- */
-.reel{
-  border:1px solid var(--line);background:#040405;
-  display:grid;grid-template-columns:18px 1fr 18px;
-  box-shadow:inset 0 0 60px rgba(0,0,0,.7);
-}
+.reel{border:1px solid var(--line);background:#040405;display:grid;grid-template-columns:18px 1fr 18px;box-shadow:inset 0 0 60px rgba(0,0,0,.7)}
 .rail{background:#000;position:relative}
-.rail::before{
-  content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(180deg,transparent 0 6px,rgba(255,255,255,.14) 6px 16px,transparent 16px 28px);
-  background-size:9px 28px;background-position:center;background-repeat:repeat-y;
-}
+.rail::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 6px,rgba(255,255,255,.14) 6px 16px,transparent 16px 28px);background-size:9px 28px;background-position:center;background-repeat:repeat-y}
 .strip{min-width:0}
 .frame{position:relative;padding:24px 16px 28px;border-bottom:1px solid #16161b}
 .frame:last-child{border-bottom:0}
-.frame .fno{
-  font-family:var(--font-m);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--amber);
-  display:flex;align-items:center;gap:9px;margin-bottom:14px;
-}
+.frame .fno{font-family:var(--font-m);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--amber);display:flex;align-items:center;gap:9px;margin-bottom:14px}
 .frame .fno .dot{width:6px;height:6px;background:var(--amber);border-radius:50%;box-shadow:0 0 7px var(--amber);flex:none}
-.shot{
-  aspect-ratio:3/2;border:1px solid #2b2b34;background:#0b0b0e;
-  position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
-}
-.shot .g{position:absolute;inset:0;opacity:.6;background:radial-gradient(80% 120% at 50% 0,rgba(93,137,255,.08),transparent 60%)}
-.shot .hint{position:relative;text-align:center;padding:18px;max-width:88%}
-.shot .hint .ic{font-family:var(--font-m);font-size:12px;letter-spacing:.16em;color:var(--ash);text-transform:uppercase;margin-bottom:10px}
-.shot .hint .desc{font-family:var(--font-m);font-size:13px;letter-spacing:.01em;color:var(--ash-2);line-height:1.7}
+.shot{position:relative;aspect-ratio:1080/840;border:1px solid #2b2b34;background:#0b0b0e;overflow:hidden}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.shot .g{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 100% at 50% 45%,transparent 58%,rgba(0,0,0,.4))}
 .cap{margin-top:18px;font-size:17px;line-height:1.7;color:#e6e6ea;letter-spacing:-.003em}
 .cap .beat{display:block;font-family:var(--font-m);font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;margin-bottom:9px;opacity:.9}
 
-/* the last, hot frame */
 .frame.hot .fno,.frame.hot .fno .dot,.frame.hot .cap .beat{color:var(--safe)}
 .frame.hot .fno .dot{background:var(--safe);box-shadow:0 0 9px var(--safe)}
-.frame.hot .shot{border-color:rgba(255,68,83,.4)}
-.frame.hot .shot .g{background:radial-gradient(90% 130% at 50% 100%,rgba(255,68,83,.16),transparent 60%);opacity:1}
+.frame.hot .shot{border-color:rgba(255,68,83,.45)}
+.frame.hot .shot .g{background:radial-gradient(110% 130% at 50% 100%,rgba(255,68,83,.28),transparent 55%),radial-gradient(120% 100% at 50% 45%,transparent 58%,rgba(0,0,0,.4))}
 .frame.hot .cap{color:#f5f5f7}
 
-.tail{
-  margin-top:30px;text-align:center;font-family:var(--font-m);
-  font-size:12px;letter-spacing:.24em;color:var(--ash-dim);text-transform:uppercase;
-}
+.tail{margin-top:30px;text-align:center;font-family:var(--font-m);font-size:12px;letter-spacing:.24em;color:var(--ash-dim);text-transform:uppercase}
 .tail::before,.tail::after{content:"· · ·";margin:0 12px;color:#33333f}
 
-/* scale up gently on larger screens */
 @media(min-width:600px){
   .wrap{max-width:680px;padding:56px 40px 100px}
-  .card{padding:34px;display:grid;grid-template-columns:210px 1fr;gap:32px;align-items:start}
+  .card{padding:34px;display:grid;grid-template-columns:260px 1fr;gap:32px;align-items:start}
   .portrait{margin:0}
   .who .kr,.who .en,.chips{text-align:left;justify-content:flex-start}
   .reel{grid-template-columns:26px 1fr 26px}
@@ -163,10 +91,8 @@ body::after{
 }
 @media(prefers-reduced-motion:no-preference){
   .frame{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
-  .frame:nth-child(1){animation-delay:.05s}
-  .frame:nth-child(2){animation-delay:.14s}
-  .frame:nth-child(3){animation-delay:.23s}
-  .frame:nth-child(4){animation-delay:.32s}
+  .frame:nth-child(1){animation-delay:.05s}.frame:nth-child(2){animation-delay:.14s}
+  .frame:nth-child(3){animation-delay:.23s}.frame:nth-child(4){animation-delay:.32s}
   .frame:nth-child(5){animation-delay:.41s}
   @keyframes rise{to{opacity:1;transform:none}}
 }
@@ -177,28 +103,22 @@ body::after{
 
   <div class="eyebrow"><span>THE VOID</span> · <b>논현 언더그라운드</b></div>
 
-  <!-- PROFILE CARD -->
   <section class="card" aria-label="설도진 프로필">
     <div class="portrait">
+      <img src="https://raw.githubusercontent.com/crgch/sdj/refs/heads/main/%ED%8F%B0.png" alt="설도진 프로필">
+      <div class="frameline"></div>
       <span class="corner c1"></span><span class="corner c2"></span>
       <span class="corner c3"></span><span class="corner c4"></span>
-      <div class="ph">
-        <div class="cross"></div>
-        <div class="plabel">PORTRAIT<br>삼백안 · 탈색모<br>실버 피어싱</div>
-      </div>
+      <span class="tag">SEOL DOJIN · 26</span>
     </div>
 
     <div class="who">
       <div class="kr">설도진</div>
       <div class="en">SEOL DO&#8203;JIN</div>
-
       <div class="chips">
-        <span class="chip">26</span>
-        <span class="chip">男</span>
-        <span class="chip a">ENTP</span>
-        <span class="chip">187㎝</span>
+        <span class="chip">26</span><span class="chip">男</span>
+        <span class="chip a">ENTP</span><span class="chip">187㎝</span>
       </div>
-
       <dl class="specs">
         <div class="spec"><dt>직업</dt><dd>언더그라운드 DJ·프로듀서 <em>(클럽 '더 보이드')</em><br>프리랜서 모션 그래픽 디자이너</dd></div>
         <div class="spec"><dt>취미</dt><dd>필름 카메라 출사</dd></div>
@@ -208,7 +128,6 @@ body::after{
     </div>
   </section>
 
-  <!-- STORY SECTION -->
   <div class="sec">
     <span class="num">R.01</span>
     <h2>지금까지의 이야기</h2>
@@ -217,61 +136,39 @@ body::after{
 
   <section class="reel" aria-label="줄거리 요약">
     <div class="rail" aria-hidden="true"></div>
-
     <div class="strip">
 
       <div class="frame">
         <div class="fno"><span class="dot"></span>FRAME 33</div>
-        <div class="shot"><div class="g"></div>
-          <div class="hint"><div class="ic">□ 이미지</div>
-            <div class="desc">행복의 절정 → 등 돌리는 도진<br>(맞잡은 손을 놓는 컷)</div></div>
-        </div>
-        <p class="cap"><span class="beat">반복된 이별과 재회</span>
-        행복이 절정에 닿을 때마다, 그는 불안을 견디지 못하고 당신을 밀어냈다.</p>
+        <div class="shot"><img loading="lazy" src="https://raw.githubusercontent.com/crgch/sdj/refs/heads/main/%EC%9D%B4%EB%B3%84.png" alt="이별"><div class="g"></div></div>
+        <p class="cap"><span class="beat">반복된 이별과 재회</span>행복이 절정에 닿을 때마다, 그는 불안을 견디지 못하고 당신을 밀어냈다.</p>
       </div>
 
       <div class="frame">
         <div class="fno"><span class="dot"></span>FRAME 33A</div>
-        <div class="shot"><div class="g"></div>
-          <div class="hint"><div class="ic">□ 이미지</div>
-            <div class="desc">지친 당신이 그를 다시 끌어안는 컷<br>(네온 아래, 등을 감싸는 손)</div></div>
-        </div>
-        <p class="cap"><span class="beat">'나밖에 없다'</span>
-        당신은 매번 부채감으로 그를 다시 품었고, 일상은 어느새 그의 예민함을 견디는 일로 채워졌다.</p>
+        <div class="shot"><img loading="lazy" src="https://raw.githubusercontent.com/crgch/sdj/refs/heads/main/%EC%9E%AC%EA%B2%B0%ED%95%A9.png" alt="재결합"><div class="g"></div></div>
+        <p class="cap"><span class="beat">'나밖에 없다'</span>당신은 매번 부채감으로 그를 다시 품었고, 일상은 어느새 그의 예민함을 견디는 일로 채워졌다.</p>
       </div>
 
       <div class="frame">
         <div class="fno"><span class="dot"></span>FRAME 34</div>
-        <div class="shot"><div class="g"></div>
-          <div class="hint"><div class="ic">□ 이미지</div>
-            <div class="desc">지하 작업실 철문 앞에 선 당신<br>(콘크리트 · 블루 네온의 성역)</div></div>
-        </div>
-        <p class="cap"><span class="beat">마지막 성역</span>
-        그가 아무리 쓰레기처럼 굴어도, 논현동 지하 작업실만은 오직 당신에게만 허락된 곳이라 믿었다.</p>
+        <div class="shot"><img loading="lazy" src="https://raw.githubusercontent.com/crgch/sdj/refs/heads/main/%EC%B2%A0%EB%AC%B8%EC%9D%84%EB%82%B4%EB%A0%A4%EA%B0%80.png" alt="작업실 철문"><div class="g"></div></div>
+        <p class="cap"><span class="beat">마지막 성역</span>그가 아무리 쓰레기처럼 굴어도, 논현동 지하 작업실만은 오직 당신에게만 허락된 곳이라 믿었다.</p>
       </div>
 
       <div class="frame">
         <div class="fno"><span class="dot"></span>FRAME 34A</div>
-        <div class="shot"><div class="g"></div>
-          <div class="hint"><div class="ic">□ 이미지</div>
-            <div class="desc">낯선 여자의 웃음 섞인 인스타 스토리<br>(폰 화면 클로즈업 · 도발)</div></div>
-        </div>
-        <p class="cap"><span class="beat">더럽혀진 보루</span>
-        그런데 오늘, 도진은 그 마지막 보루마저 낯선 여자의 웃음소리로 더럽히며 당신을 도발했다.</p>
+        <div class="shot"><img loading="lazy" src="https://raw.githubusercontent.com/crgch/sdj/refs/heads/main/%EC%97%AC%EC%9E%90.png" alt="낯선 여자"><div class="g"></div></div>
+        <p class="cap"><span class="beat">더럽혀진 보루</span>그런데 오늘, 도진은 그 마지막 보루마저 낯선 여자의 웃음소리로 더럽히며 당신을 도발했다.</p>
       </div>
 
       <div class="frame hot">
         <div class="fno"><span class="dot"></span>FRAME 35 · END OF ROLL</div>
-        <div class="shot"><div class="g"></div>
-          <div class="hint"><div class="ic">□ 이미지</div>
-            <div class="desc">가파른 지하 계단을 내려가는 뒷모습<br>(세이프라이트 레드 · 결심)</div></div>
-        </div>
-        <p class="cap"><span class="beat">굴레를 찢으러</span>
-        이제 당신은 그를 구하기 위해서가 아니라, 무너진 당신의 자리를 확인하고 이 지독한 굴레를 직접 찢어버리기 위해 계단을 내려간다.</p>
+        <div class="shot"><img loading="lazy" src="https://raw.githubusercontent.com/crgch/sdj/refs/heads/main/%EA%B3%84%EB%8B%A8.png" alt="계단을 내려가는 뒷모습"><div class="g"></div></div>
+        <p class="cap"><span class="beat">굴레를 찢으러</span>이제 당신은 그를 구하기 위해서가 아니라, 무너진 당신의 자리를 확인하고 이 지독한 굴레를 직접 찢어버리기 위해 계단을 내려간다.</p>
       </div>
 
     </div>
-
     <div class="rail" aria-hidden="true"></div>
   </section>
 
